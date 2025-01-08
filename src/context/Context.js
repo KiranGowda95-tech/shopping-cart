@@ -1,21 +1,21 @@
 import {createContext} from 'react'
-import faker from 'faker'
+//import axios from 'axios'
 const Cart=createContext()
 
 const Context = ({children}) => {
-    const products=[...Array(20)].map(()=>({
-        id: faker.datatype.uuid(),
-        name: faker.commerce.productName(),
-        price: faker.commerce.price(),
-        image:faker.random.image(),
-        instock:faker.random.arrayElement([0,3,5,6,7]),
-        fastDelivery:faker.datatype.boolean(),
-        ratings:faker.random.arrayElement([1,2,3,4,5])
+    const products=[...Array()].map(()=>({
+        id: faker.id,
+        name: faker.name,
+        price: faker.price,
+        image:faker.random.image,
+        //instock:faker.random.arrayElement([0,3,5,6,7]),
+        //fastDelivery:faker.datatype.boolean(),
+        //ratings:faker.random.arrayElement([1,2,3,4,5])
 
     }))
-    console.log(products)
+    console.log("products components from context",products)
   return (
-    <Cart.Provider>
+    <Cart.Provider value={{}}>
       {children}
     </Cart.Provider>
   )
